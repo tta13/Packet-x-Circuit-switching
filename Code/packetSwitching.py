@@ -29,4 +29,15 @@ class packetSwitching:
             combination = (combinatorics.combination(userCount, i + 1))
             probability += combination * active * inactive
         return probability
-        
+
+    def getProbabilityByUser(self):
+        probabilities = []
+        userCount = self.users.__len__()
+
+        for i in range(0, userCount):
+            active = (self.users[i].activeProbability ** (i + 1))
+            inactive = (self.users[i].inactiveProbability ** (userCount - (i + 1)))
+            combination = (combinatorics.combination(userCount, i + 1))
+            probability = combination * active * inactive
+            probabilities.append(probability)
+        return probabilities

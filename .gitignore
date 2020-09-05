@@ -1,4 +1,5 @@
 #Ignore the following directories
 Code/.vscode/
+.vscode/
 Code/__pycache__/
 Code/virEnv/
