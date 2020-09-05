@@ -1,12 +1,12 @@
 from user import user
 
 class circuitSwitching:
-    def calculateMaxUsersSuported():
+    def calculateMaxUsersSuported(self):
         band = 0.0
         maxUsers = 0
-        for i in users:
-            band += users.requiredData
-            if(band > bandWidth):
+        for i in self.users:
+            band += i.requiredDataRate
+            if(band > self.bandWidth):
                 break
             maxUsers += 1
         return maxUsers

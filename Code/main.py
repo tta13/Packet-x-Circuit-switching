@@ -1,17 +1,28 @@
 from packetSwitching import packetSwitching
 from circuitSwitching import circuitSwitching
+from combinatorics import combinatorics
 from user import user
 
 class main:
 
     def main():
-        users = []
-        for i in range(0, 4):
-            users.append(user(30, .5))
+        #userAmount = int(input("Digite a quantidade de usuários:"))
+        #activeChance = float(input("Digite a probabilidade de o usuário estar ativo:"))
+        #userBand = float(input("Digite a quantidade de dados (em kbps) requisitada por cada usuário:"))
+        #linkBand = float(input("Digite a capacidade total do enlace (em kbps):"))
 
-        users.append(user(20, .0))
-        users.append(user(4, .3))
-        circ = circuitSwitching(users, 400.0)
+        #users = []
+        #for i in range(0, userAmount):
+        #   users.append(user(userBand, activeChance))
+
+        #circuit = circuitSwitching(users, linkBand)
+        #max = circuit.calculateMaxUsersSuported()
+        #print(max)
         
+        print(combinatorics.fat(5))
+        print(combinatorics.combination(7,6))
+        print(combinatorics.permutation(7,6))
+
+
     if __name__ == "__main__":
        main() 
