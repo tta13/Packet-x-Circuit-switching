@@ -1,1 +1,3 @@
-Code/.vscode/settings.json
+Code/.vscode/
+Code/__pycache__/
+get-pip.py
