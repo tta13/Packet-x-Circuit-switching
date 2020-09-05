@@ -1,6 +1,11 @@
 from user import user
 
 class circuitSwitching:
+    def __init__(self, users, bandWidth):
+        self.users = users
+        self.bandWidth = bandWidth
+        print("********* Comutação por circuitos *********")
+
     def calculateMaxUsersSuported(self):
         band = 0.0
         maxUsers = 0
@@ -9,12 +14,4 @@ class circuitSwitching:
             if(band > self.bandWidth):
                 break
             maxUsers += 1
-        return maxUsers
-
-
-
-
-    def __init__(self, users, bandWidth):
-        self.users = users
-        self.users.sort(key = lambda u:u.requiredDataRate)
-        self.bandWidth = bandWidth
+        return maxUsers        
