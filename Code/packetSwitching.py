@@ -14,7 +14,7 @@ class packetSwitching:
         for i in self.users:
             band += i.requiredDataRate
             userThreshold += 1
-            if(band >= self.bandWidth):
+            if(band > self.bandWidth):
                 break
         return userThreshold  
     
