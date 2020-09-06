@@ -8,7 +8,7 @@ from user import user
 def showGraph(p):
     probabilities = p.getProbabilityByUser()
     graph = graphs("Análise de comutação por pacotes", "Número de usuários ativos",
-    "Probabilidade", "Graphs/Análise.png")
+    "Probabilidade", "../Graphs/Análise.png")
     graph.plotGraph(list(range(1, probabilities.__len__() + 1)), probabilities, "--", "o")
 
 
@@ -25,13 +25,16 @@ def main():
 
     circuit = circuitSwitching(users, linkBand)
     max = circuit.calculateMaxUsersSuported()
-    print("Número máximo de usuários conectados ", max)
+    print("Número máximo de usuários conectados: ", max)
 
     packet = packetSwitching(users, linkBand)
     prob = packet.getBottleneckProbability()
-    print("Probabilidade da demanda superar a capacidade do enlace ", prob)
+    print("Probabilidade da demanda superar a capacidade do enlace: ", prob)
 
-    showGraph(packet)
+    shouldShowGraph = input("Mostrar gráfico? [Y/n]: ")
+
+    if (shouldShowGraph == "y") | (shouldShowGraph == "Y"):
+        showGraph(packet)
 
 if __name__ == "__main__":
-    main()     
+    main()
